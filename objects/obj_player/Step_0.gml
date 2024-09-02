@@ -15,6 +15,16 @@ else if (_up_key || _down_key)
 	yspeed = (_down_key - _up_key) * move_speed;
 }
 
+// collisions
+if place_meeting(x + xspeed, y, obj_map_walls) == true
+{
+	xspeed = 0;
+}
+if place_meeting(x, y + yspeed, obj_map_walls) == true
+{
+	yspeed = 0;
+}
+
 x += xspeed;
 y += yspeed;
 	//if (keyboard_check(vk_up || vk_down || vk_left || vk_right))
