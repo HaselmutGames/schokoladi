@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_game",
+  "%Name":"obj_map",
   "eventList":[],
   "managed":true,
-  "name":"obj_game",
+  "name":"obj_map",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -21,18 +21,16 @@
   "physicsRestitution":0.1,
   "physicsSensor":false,
   "physicsShape":1,
-  "physicsShapePoints":[
-    {"x":0.0,"y":0.0,},
-    {"x":32.0,"y":0.0,},
-    {"x":32.0,"y":32.0,},
-    {"x":0.0,"y":32.0,},
-  ],
+  "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_map",
+    "path":"sprites/spr_map/spr_map.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
