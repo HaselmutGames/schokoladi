@@ -21,13 +21,13 @@ if(_right_key || _left_key)
 else if(_up_key || _down_key)
 {
 	yspeed = (_down_key - _up_key) * move_speed;
-	if (_up_key)
+	if (_down_key)
 	{
-        sprite_index = spr_player_up; // Facing up
+        sprite_index = spr_player_down; // Facing up
     }
 	else
 	{
-        sprite_index = spr_player_down; // Facing down
+        sprite_index = spr_player_up; // Facing down
     }
 }
 
