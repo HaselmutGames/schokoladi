@@ -1,0 +1,37 @@
+create:
+xspeed = 0;
+yspeed = 0;
+
+move_speed = 1;
+step:
+var _right_key = keyboard_check(vk_right);
+var _left_key = keyboard_check(vk_left);
+var _up_key = keyboard_check(vk_up);
+var _down_key = keyboard_check(vk_down);
+
+xspeed = 0;
+yspeed = 0;
+
+if (_right_key || _left_key)
+{
+	xspeed = (_right_key - _left_key) * move_speed;
+}
+else if (_up_key || _down_key)
+{
+	yspeed = (_down_key - _up_key) * move_speed;
+}
+
+// collisions
+if place_meeting(x + xspeed, y, obj_map_walls) == true
+{
+	xspeed = 0;
+}
+if place_meeting(x, y + yspeed, obj_map_walls) == true
+{
+	yspeed = 0;
+}
+
+x += xspeed;
+y += yspeed;
+room:
+288x216

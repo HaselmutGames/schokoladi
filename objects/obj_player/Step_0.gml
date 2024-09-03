@@ -6,16 +6,32 @@ var _down_key = keyboard_check(vk_down);
 xspeed = 0;
 yspeed = 0;
 
-if (_right_key || _left_key)
+if(_right_key || _left_key)
 {
 	xspeed = (_right_key - _left_key) * move_speed;
+	if (_right_key) 
+	{
+        sprite_index = spr_player_right; // Facing right
+    }
+	else
+	{
+        sprite_index = spr_player_left; // Facing left
+    }
 }
-else if (_up_key || _down_key)
+else if(_up_key || _down_key)
 {
 	yspeed = (_down_key - _up_key) * move_speed;
+	if (_up_key)
+	{
+        sprite_index = spr_player_up; // Facing up
+    }
+	else
+	{
+        sprite_index = spr_player_down; // Facing down
+    }
 }
 
-// collisions
+//collisions
 if place_meeting(x + xspeed, y, obj_map_walls) == true
 {
 	xspeed = 0;
@@ -25,8 +41,10 @@ if place_meeting(x, y + yspeed, obj_map_walls) == true
 	yspeed = 0;
 }
 
+
 x += xspeed;
 y += yspeed;
+
 	//if (keyboard_check(vk_up || vk_down || vk_left || vk_right))
 	//{
 	//	speed = 4;
