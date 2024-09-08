@@ -40,7 +40,16 @@ if place_meeting(x, y + yspeed, obj_map_walls) == true
 {
 	yspeed = 0;
 }
-
+//if place_meeting(x + xspeed, y, obj_ghost) == true
+//{
+//	instance_destroy(self);
+	
+//}
+//if place_meeting(x, y + yspeed, obj_ghost) == true
+//{
+//	instance_destroy(self);
+//}
+//end-collisions
 
 x += xspeed;
 y += yspeed;
