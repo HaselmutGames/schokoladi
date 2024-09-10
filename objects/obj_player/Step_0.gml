@@ -3,11 +3,8 @@ var _left_key = keyboard_check(vk_left);
 var _up_key = keyboard_check(vk_up);
 var _down_key = keyboard_check(vk_down);
 
-_player_lives = 3;
 xspeed = 0;
 yspeed = 0;
-
-obj_heart.sprite_index = spr_heart_full;
 
 if(_right_key || _left_key)
 {
@@ -33,28 +30,21 @@ else if(_up_key || _down_key)
         sprite_index = spr_player_up; // Facing down
     }
 }
-
-//collisions
-if (place_meeting(x + xspeed, y, obj_map_walls) == true)
+// Collision with map walls
+if (place_meeting(x + xspeed, y, obj_map_walls))
 {
 	xspeed = 0;
 }
-if (place_meeting(x, y + yspeed, obj_map_walls) == true)
+if (place_meeting(x, y + yspeed, obj_map_walls))
 {
 	yspeed = 0;
 }
-if (place_meeting(x + xspeed , y, obj_ghost) == true && _player_lives == 3)
-{
-	inst_393FEDF8.sprite_index = spr_heart_empty;
-	_player_lives -= 1;
+// End of collisions
+
+// Shooting logic
+if (mouse_check_button_pressed(mb_left)){
+	instance_create_layer(x + 8, y, "Instances", obj_bullet);
 }
-if(place_meeting(x + xspeed, y, obj_ghost) == true && _player_lives == 2)
-{
-	inst_393FEDF8.sprite_index = spr_heart_empty;
-	inst_64D402B3.sprite_index = spr_heart_empty;
-	_player_lives -= 1;
-}
-//end-collisions
 
 x += xspeed;
 y += yspeed;
