@@ -40,6 +40,10 @@ if (place_meeting(x, y + yspeed, obj_map_walls))
 	yspeed = 0;
 }
 // End of collisions
+// Decrementing the invincibility timer if it's greater than 0
+if(_invincibility_time > 0){
+	_invincibility_time -= 1;
+}
 
 // Shooting logic
 if (mouse_check_button_pressed(mb_left)){
