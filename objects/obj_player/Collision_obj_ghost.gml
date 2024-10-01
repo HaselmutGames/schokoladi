@@ -14,9 +14,7 @@ if(_invincibility_time == 0){
 	    inst_3317A822.sprite_index = spr_heart_empty;
 	    _player_lives -= 1;
 		_invincibility_time = 60;
-	    // Handle game over here, as player has lost all lives
-	} else if (_player_lives <= 0) {
-	    // Prevent further collisions from affecting the player
-	    // You might want to trigger a "game over" state here
-	}
+	    instance_destroy(obj_player);
+		// implement game over "window"
+	} 
 }

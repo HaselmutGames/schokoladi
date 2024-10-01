@@ -7,3 +7,5 @@ move_speed = 1;
 _player_lives = 3;
 // Invincibility timer
 _invincibility_time = 0;
+// Initial direction
+_player_direction = 0;
