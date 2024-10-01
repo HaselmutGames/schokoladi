@@ -9,3 +9,7 @@ _player_lives = 3;
 _invincibility_time = 0;
 // Initial direction
 _player_direction = 0;
+// Storing heart spirte instances in an array
+hearts[0] = instance_find(obj_heart, 0);
+hearts[1] = instance_find(obj_heart, 1);
+hearts[2] = instance_find(obj_heart, 2);
