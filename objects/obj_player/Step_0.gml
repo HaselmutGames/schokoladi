@@ -59,25 +59,25 @@ if(_invincibility_time > 0){
 if (mouse_check_button_pressed(mb_left)){
 	if(_player_direction == 0)
 	{
-		_bullets = instance_create_layer(x + 8, y, "Instances", obj_bullet);
+		_bullets = instance_create_layer(x + 4, y, "Instances", obj_bullet);
 		// Setting the bullet's direction to match the player's direction
 		_bullets.direction = _player_direction;
 	}
 	if(_player_direction == 90)
 	{
-		_bullets = instance_create_layer(x, y - 8, "Instances", obj_bullet);
+		_bullets = instance_create_layer(x, y - 4, "Instances", obj_bullet);
 		// Setting the bullet's direction to match the player's direction
 		_bullets.direction = _player_direction;
 	}
 	if(_player_direction == 180)
 	{
-		_bullets = instance_create_layer(x - 8, y, "Instances", obj_bullet);
+		_bullets = instance_create_layer(x - 4, y, "Instances", obj_bullet);
 		// Setting the bullet's direction to match the player's direction
 		_bullets.direction = _player_direction;
 	}
 	if(_player_direction == 270)
 	{
-		_bullets = instance_create_layer(x, y + 8, "Instances", obj_bullet);
+		_bullets = instance_create_layer(x, y + 4, "Instances", obj_bullet);
 		// Setting the bullet's direction to match the player's direction
 		_bullets.direction = _player_direction;
 	}
@@ -85,40 +85,3 @@ if (mouse_check_button_pressed(mb_left)){
 
 x += xspeed;
 y += yspeed;
-
-	//if (keyboard_check(vk_up || vk_down || vk_left || vk_right))
-	//{
-	//	speed = 4;
-	//	if (keyboard_check(vk_up &&  !place_meeting(x, y - speed, obj_game)))
-	//	{
-	//		sprite_index = spr_player;
-	//		image_index = 0;
-	//		direction = 90;
-	//		image_angle = 90;
-	//		y -= speed;
-	//	}
-
-	//	if (keyboard_check(vk_left))
-	//	{
-	//		sprite_index = spr_player_left;
-	//		image_index = 0;
-	//		direction = 180;
-	//		image_angle = 0;
-	//	}
-
-	//	if (keyboard_check(vk_down))
-	//	{
-	//		sprite_index = spr_player;
-	//		image_index = 0;
-	//		direction = 270;
-	//		image_angle = 270;
-	//	}
-
-	//	if (keyboard_check(vk_right))
-	//	{
-	//		sprite_index = spr_player;
-	//		image_index = 0;
-	//		direction = 0;
-	//		image_angle = 360;
-	//	}
-	//}
