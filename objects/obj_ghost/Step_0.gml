@@ -1,42 +1,52 @@
-move_timer -= 1;
-var _x_move = lengthdir_x(move_speed, direction);
-var _y_move = lengthdir_x(move_speed, direction);
-
-if(!place_meeting(x + _x_move, y + _y_move, obj_map_walls))
+// Check if we need to change direction
+if(move_timer <= 0)
 {
-	x += _x_move;
-	y += _y_move;
+    // Pick a random direction: 0 (right), 90 (up), 180 (left), or 270 (down)
+    direction = choose(0, 90, 180, 270);
+    // Change direction after 30-60 steps
+	move_timer = irandom_range(30, 60); 
+}
+
+// Reset step timer as it decreases each step
+move_timer -= 1;
+
+// Movement logic based on current direction
+var _xmove = 0;
+var _ymove = 0;
+
+switch(direction)
+{
+    case 0:
+		_xmove = move_speed;	 // Moving right
+		break;   
+    case 90:
+		_ymove = -move_speed;	// Moving up
+		break;  
+    case 180:
+		_xmove = -move_speed;	// Moving left
+		break; 
+    case 270: 
+		_ymove = move_speed;	// Moving down
+		break;  
+}
+
+// Check for collisions with walls before moving
+if(!place_meeting(x + _xmove, y, obj_map_walls))
+{
+    x += _xmove;
 }
 else
 {
-	// On collision, choose a new valid direction that isn't the previous one
-    var _new_direction;
-    var _valid_direction_found = false;
-
-    for (var i = 0; i < 4; i++) { // Try up to 4 times (one for each direction)
-        _new_direction = choose(0, 90, 180, 270);
-        
-        // Make sure the new direction isn't the same as the previous one
-        if (_new_direction != previous_direction) {
-            _x_move = lengthdir_x(move_speed, _new_direction);
-            _y_move = lengthdir_y(move_speed, _new_direction);
-
-            // Check if the new direction is valid (no collision)
-            if (!place_meeting(x + _x_move, y + _y_move, obj_map_walls)) {
-                _valid_direction_found = true;
-                break;
-            }
-        }
-	}
-	// If a valid direction was found, update the direction
-    if (_valid_direction_found) {
-        previous_direction = direction;
-        direction = _new_direction;
-    }
+    // Hit a wall, so change direction immediately
+    move_timer = 0;
 }
-if(move_timer <= 0)
+
+if(!place_meeting(x, y + _ymove, obj_map_walls))
 {
-	previous_direction = direction; // Store the current direction as the previous one
-    direction = choose(0, 90, 180, 270); // Only allow cardinal directions
-    move_timer = irandom_range(30, 90); // Reset the timer
-} 
+    y += _ymove;
+}
+else
+{
+    // Hit a wall, so change direction immediately
+    move_timer = 0;
+}
