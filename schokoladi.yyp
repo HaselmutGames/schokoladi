@@ -35,6 +35,8 @@
   "name":"schokoladi",
   "resources":[
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
+    {"id":{"name":"obj_chocolate_dark","path":"objects/obj_chocolate_dark/obj_chocolate_dark.yy",},},
+    {"id":{"name":"obj_chocolate_strawberry","path":"objects/obj_chocolate_strawberry/obj_chocolate_strawberry.yy",},},
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},},
     {"id":{"name":"obj_ghost","path":"objects/obj_ghost/obj_ghost.yy",},},
     {"id":{"name":"obj_heart","path":"objects/obj_heart/obj_heart.yy",},},
@@ -43,6 +45,8 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"Level_1","path":"rooms/Level_1/Level_1.yy",},},
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},},
+    {"id":{"name":"spr_chocolate_dark","path":"sprites/spr_chocolate_dark/spr_chocolate_dark.yy",},},
+    {"id":{"name":"spr_chocolate_strawberry","path":"sprites/spr_chocolate_strawberry/spr_chocolate_strawberry.yy",},},
     {"id":{"name":"spr_ghost","path":"sprites/spr_ghost/spr_ghost.yy",},},
     {"id":{"name":"spr_heart_empty","path":"sprites/spr_heart_empty/spr_heart_empty.yy",},},
     {"id":{"name":"spr_heart_full","path":"sprites/spr_heart_full/spr_heart_full.yy",},},
