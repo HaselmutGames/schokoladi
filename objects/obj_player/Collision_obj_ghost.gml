@@ -16,5 +16,9 @@ if(_invincibility_time == 0){
 		_invincibility_time = 60;
 	    instance_destroy(obj_player);
 		// implement game over "window"
-	} 
+	}
+	
+	// Reverse the ghost's direction upon collision
+	other.direction += 180; // reverse the ghost's direction
+	other.direction = other.direction mod 360; // Ensure direction stays within
 }

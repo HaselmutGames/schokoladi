@@ -18,7 +18,7 @@ switch(direction)
 		break;  
 }
 
-// Check for collisions with walls before moving
+// Check for collisions with walls, ghosts before moving
 if(!place_meeting(x + _xmove, y, obj_map_walls) && !place_meeting(x + _xmove, y, obj_ghost))
 {
 	x += _xmove;
@@ -35,8 +35,3 @@ else
 {
 	direction = choose(0, 90, 180, 270);
 }
-
-
-
-
-

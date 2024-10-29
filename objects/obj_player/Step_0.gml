@@ -41,11 +41,11 @@ else if(_up_key || _down_key)
     }
 }
 // Collision with map walls
-if (place_meeting(x + xspeed, y, obj_map_walls))
+if (place_meeting(x + xspeed, y, obj_map_walls) || place_meeting(x + xspeed, y, obj_ghost))
 {
 	xspeed = 0;
 }
-if (place_meeting(x, y + yspeed, obj_map_walls))
+if (place_meeting(x, y + yspeed, obj_map_walls) || place_meeting(x, y + yspeed, obj_ghost))
 {
 	yspeed = 0;
 }
