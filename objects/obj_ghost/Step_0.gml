@@ -17,7 +17,6 @@ switch(direction)
 		_ymove = move_speed;	// Moving down
 		break;  
 }
-
 // Check for collisions with walls, ghosts before moving
 if(!place_meeting(x + _xmove, y, obj_map_walls) && !place_meeting(x + _xmove, y, obj_ghost))
 {
